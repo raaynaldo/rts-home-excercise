@@ -1,4 +1,4 @@
-import { SEARCH_NEWS, ADD_HISTORY_NEWS, LOGS_ERROR } from 'actions/types';
+import { SEARCH_NEWS, LOGS_ERROR } from 'actions/types';
 
 const initialState = {
     news: [],
@@ -15,11 +15,6 @@ export default (state = initialState, action) => {
                 news: [...action.payload.news],
                 history: [...state.history, action.payload.history],
                 loading: false,
-            };
-        case ADD_HISTORY_NEWS:
-            return {
-                ...state,
-                history: [...state.history, action.payload],
             };
         case LOGS_ERROR:
             return {

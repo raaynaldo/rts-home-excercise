@@ -1,4 +1,4 @@
-import { SEARCH_NEWS, ADD_HISTORY_NEWS, LOGS_ERROR } from './types';
+import { SEARCH_NEWS, LOGS_ERROR } from './types';
 
 // search news from API by user input
 export const searchNews = (keyword) => async (dispatch) => {

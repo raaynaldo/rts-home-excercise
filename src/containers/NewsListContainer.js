@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Box from 'components/Box';
 import SearchResultList from 'components/SearchResultList';
 import RecentSearchList from 'components/RecentSearchList';
 
