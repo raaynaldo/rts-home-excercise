@@ -14,26 +14,13 @@ export const searchNews = (keyword) => async (dispatch) => {
             `http://hn.algolia.com/api/v1/search?query=${keyword}`
         );
         const data = await res.json();
-        console.log(data.hits.map((news) => news.title));
+        // addHistoryNews(keyword);
         dispatch({
             type: SEARCH_NEWS,
-            payload: data.hits.map((news) => news.title),
-        });
-        addHistoryNews();
-    } catch (error) {
-        dispatch({
-            type: LOGS_ERROR,
-            payload: error.response.statusText,
-        });
-    }
-};
-
-// Add search history
-export const addHistoryNews = (keyword) => (dispatch) => {
-    try {
-        dispatch({
-            type: ADD_HISTORY_NEWS,
-            payload: keyword,
+            payload: {
+                news: data.hits.map((news) => news.title),
+                history: keyword,
+            },
         });
     } catch (error) {
         dispatch({
@@ -45,6 +32,7 @@ export const addHistoryNews = (keyword) => (dispatch) => {
 
 // Set loading to true
 export const setLoading = () => {
+    console.log('loading');
     return {
         type: SET_LOADING,
     };

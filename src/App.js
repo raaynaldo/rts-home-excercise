@@ -5,9 +5,7 @@ import NewsContainer from 'containers/NewsContainer';
 const App = () => {
     return (
         <Provider store={store}>
-            <div className='bg-gray-200'>
-                <NewsContainer />
-            </div>
+            <NewsContainer />
         </Provider>
     );
 };

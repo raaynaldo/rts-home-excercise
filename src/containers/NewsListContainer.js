@@ -1,13 +1,20 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Box from 'components/Box';
 
-const NewsList = ({ news: { news, loading } }) => {
+const NewsList = ({ news: { news, history, loading } }) => {
     return (
-        <div>
-            NewsListContainer
+        <div className='flex space-x-5'>
             <div>
+                News List:
                 {news.map((title, index) => (
-                    <div key={index}>{title}</div>
+                    <Box key={index}>{title}</Box>
+                ))}
+            </div>
+            <div>
+                Recent Search :
+                {history.map((keyword, index) => (
+                    <Box key={index}>{keyword}</Box>
                 ))}
             </div>
         </div>

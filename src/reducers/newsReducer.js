@@ -13,17 +13,19 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+    console.log(action.type);
     switch (action.type) {
         case SEARCH_NEWS:
             return {
                 ...state,
-                news: [...state.news, ...action.payload],
+                news: [...action.payload.news],
+                history: [...state.history, action.payload.history],
                 loading: false,
             };
         case ADD_HISTORY_NEWS:
             return {
                 ...state,
-                history: [...state.news, ...action.payload],
+                history: [...state.history, action.payload],
             };
         case SET_LOADING:
             return {
