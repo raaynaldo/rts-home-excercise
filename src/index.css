@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+h1 {
+    @apply text-4xl lg:text-6xl;
+}
+
+h2 {
+    @apply text-2xl lg:text-5xl;
+}
+
+h3 {
+    @apply text-xl lg:text-4xl;
+}
