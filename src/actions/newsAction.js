@@ -4,7 +4,7 @@ import { SEARCH_NEWS, LOGS_ERROR } from './types';
 export const searchNews = (keyword) => async (dispatch) => {
     try {
         const res = await fetch(
-            `http://hn.algolia.com/api/v1/search?query=${keyword}`
+            `https://hn.algolia.com/api/v1/search?query=${keyword}`
         );
         const data = await res.json();
         dispatch({
