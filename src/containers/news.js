@@ -1,11 +1,15 @@
-const news = () => {
+import { useState } from 'react';
+
+const News = () => {
+    const [historyActive, setHistoryActive] = useState(false);
+    
     return (
-        <div className='flex items-center justify-center h-screen'>
+        <div className='flex justify-center h-screen pt-5'>
             <div className='relative'>
                 <input
                     type='text'
-                    className='px-4 border-2 border-gray-300 rounded-xl w-60'
-                    placeholder='search'
+                    className='h-10 px-4 border-2 border-gray-300 rounded-xl w-60'
+                    placeholder='search news'
                     onBlur={() => setHistoryActive(false)}
                     onFocus={() => setHistoryActive(true)}
                 />
@@ -26,4 +30,4 @@ const news = () => {
     );
 };
 
-export default news;
+export default News;

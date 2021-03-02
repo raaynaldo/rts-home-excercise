@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import News from 'containers/News';
+
 const App = () => {
-    const [historyActive, setHistoryActive] = useState(false);
     return (
-        <div className='bg-gray-200'>
-            
-        </div>
+        <Provider store={store}>
+            <div className='bg-gray-200'>
+                <News />
+            </div>
+        </Provider>
     );
 };
 
