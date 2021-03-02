@@ -17,13 +17,13 @@ export default (state = initialState, action) => {
         case SEARCH_NEWS:
             return {
                 ...state,
-                news: [...state.news, action.payload],
+                news: [...state.news, ...action.payload],
                 loading: false,
             };
         case ADD_HISTORY_NEWS:
             return {
                 ...state,
-                history: [...state.news, action.payload],
+                history: [...state.news, ...action.payload],
             };
         case SET_LOADING:
             return {
