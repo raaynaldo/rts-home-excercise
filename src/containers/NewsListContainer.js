@@ -1,27 +1,19 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Box from 'components/Box';
+import SearchResultList from 'components/SearchResultList';
+import RecentSearchList from 'components/RecentSearchList';
 
-const NewsList = ({ news: { news, history, loading } }) => {
+const NewsListContainer = ({ news: { news, history } }) => {
     return (
         <div className='flex space-x-5'>
-            <div>
-                News List:
-                {news.map((title, index) => (
-                    <Box key={index}>{title}</Box>
-                ))}
-            </div>
-            <div>
-                Recent Search :
-                {history.map((keyword, index) => (
-                    <Box key={index}>{keyword}</Box>
-                ))}
-            </div>
+            <SearchResultList news={news} />
+            <RecentSearchList history={history} />
         </div>
     );
 };
 
-NewsList.prototype = {
+NewsListContainer.prototype = {
     news: PropTypes.object.isRequired,
 };
 
@@ -29,4 +21,4 @@ const mapStateToProps = (state) => ({
     news: state.news,
 });
 
-export default connect(mapStateToProps)(NewsList);
+export default connect(mapStateToProps)(NewsListContainer);

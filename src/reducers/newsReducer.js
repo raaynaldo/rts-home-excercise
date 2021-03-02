@@ -1,9 +1,4 @@
-import {
-    SEARCH_NEWS,
-    ADD_HISTORY_NEWS,
-    SET_LOADING,
-    LOGS_ERROR,
-} from 'actions/types';
+import { SEARCH_NEWS, ADD_HISTORY_NEWS, LOGS_ERROR } from 'actions/types';
 
 const initialState = {
     news: [],
@@ -13,7 +8,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-    console.log(action.type);
     switch (action.type) {
         case SEARCH_NEWS:
             return {
@@ -26,11 +20,6 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 history: [...state.history, action.payload],
-            };
-        case SET_LOADING:
-            return {
-                ...state,
-                loading: true,
             };
         case LOGS_ERROR:
             return {
