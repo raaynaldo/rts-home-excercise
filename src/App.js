@@ -1,12 +1,12 @@
 import { Provider } from 'react-redux';
 import store from './store';
-import News from 'containers/News';
+import NewsContainer from 'containers/NewsContainer';
 
 const App = () => {
     return (
         <Provider store={store}>
             <div className='bg-gray-200'>
-                <News />
+                <NewsContainer />
             </div>
         </Provider>
     );

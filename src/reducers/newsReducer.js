@@ -1,4 +1,9 @@
-import { SEARCH_NEWS, ADD_HISTORY_NEWS } from './types';
+import {
+    SEARCH_NEWS,
+    ADD_HISTORY_NEWS,
+    SET_LOADING,
+    LOGS_ERROR,
+} from 'actions/types';
 
 const initialState = {
     news: [],
@@ -20,5 +25,17 @@ export default (state = initialState, action) => {
                 ...state,
                 history: [...state.news, action.payload],
             };
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: true,
+            };
+        case LOGS_ERROR:
+            return {
+                ...state,
+                error: action.payload,
+            };
+        default:
+            return state;
     }
 };
