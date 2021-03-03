@@ -2,11 +2,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SearchResultList from 'components/SearchResultList';
 import RecentSearchList from 'components/RecentSearchList';
+import Loader from 'react-loader-spinner';
 
-const NewsListContainer = ({ news: { news, history } }) => {
+const NewsListContainer = ({ news: { news, history, loading } }) => {
     return (
         <div className='flex space-x-5'>
-            <SearchResultList news={news} />
+            {loading ? (
+                <Loader type='Bars' color='#60a5fa' height={100} width={100} />
+            ) : (
+                <SearchResultList news={news} />
+            )}
             <RecentSearchList history={history} />
         </div>
     );
