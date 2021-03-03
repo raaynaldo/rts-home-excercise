@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 news: [...action.payload.news],
-                history: [...state.history, action.payload.history],
+                history: [action.payload.history, ...state.history],
                 loading: false,
             };
         case LOGS_ERROR:
