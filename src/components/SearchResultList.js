@@ -9,6 +9,7 @@ const SearchResultList = ({ news }) => {
                         href={news.url}
                         className='text-blue-600'
                         target='_blank'
+                        rel='noreferrer'
                     >
                         {news.title}
                     </a>
