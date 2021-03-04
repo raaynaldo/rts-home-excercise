@@ -9,10 +9,14 @@ export const searchNews = (keyword) => async (dispatch) => {
             `https://hn.algolia.com/api/v1/search?query=${keyword}`
         );
         const data = await res.json();
+        console.log(data);
         dispatch({
             type: SEARCH_NEWS,
             payload: {
-                news: data.hits.map((news) => news.title),
+                news: data.hits.map((news) => ({
+                    title: news.title,
+                    url: news.url,
+                })),
                 history: keyword,
             },
         });
