@@ -17,7 +17,7 @@ const NewsListContainer = ({ news: { news, history, loading } }) => {
     );
 };
 
-NewsListContainer.prototype = {
+NewsListContainer.propTypes = {
     news: PropTypes.object.isRequired,
 };
 
